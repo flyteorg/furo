@@ -454,6 +454,6 @@ article .align-default {
 }
 
 /* Hide "On GitHub" section from versions menu */
-.rst-versions.rst-badge.shift-up .rst-other-versions dl {
+.rst-versions.shift-up .rst-other-versions {
   display: none;
 }
