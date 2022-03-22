@@ -451,3 +451,8 @@ article .align-default {
 .rst-versions.rst-badge.shift-up .rst-current-version .fa-book {
   padding-top: 8px !important;
 }
+
+/* Hide "On GitHub" section from versions menu */
+div.rst-versions > div.rst-other-versions > dl:nth-child(3) {
+    display: none;
+}
