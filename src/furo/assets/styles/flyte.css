@@ -43,7 +43,8 @@ h6 {
   padding: 0 15px !important;
 }
 
-.DocSearch-Button:hover, .DocSearch-Button:active {
+.DocSearch-Button:hover,
+.DocSearch-Button:active {
   box-shadow: none !important;
   background: var(--docsearch-searchbox-background) !important;
 }
@@ -453,6 +454,6 @@ article .align-default {
 }
 
 /* Hide "On GitHub" section from versions menu */
-div.rst-versions > div.rst-other-versions > dl:nth-child(3) {
-    display: none;
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(4) {
+  display: none;
 }
