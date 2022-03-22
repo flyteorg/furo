@@ -5,7 +5,7 @@ var gulp = require("gulp");
 var concat = require("gulp-concat");
 var postcss = require("gulp-postcss");
 var rename = require("gulp-rename");
-var sass = require("gulp-sass");
+var sass = require("gulp-sass")(require("sass"));
 var sourcemaps = require("gulp-sourcemaps");
 var uglify = require("gulp-uglify");
 
@@ -22,8 +22,7 @@ var dest_path = "./src/furo/theme/furo/static";
 
 function css() {
   return gulp
-    .src(
-      src_path + "styles/[!_]*.sass", { since: gulp.lastRun(css) })
+    .src(src_path + "styles/[!_]*.sass", { since: gulp.lastRun(css) })
     .pipe(sourcemaps.init())
     .pipe(sass({ fiber: Fiber }).on("error", sass.logError))
     .pipe(postcss(plugins))
