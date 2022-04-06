@@ -102,3 +102,61 @@ I'm also a maintainer on the last two, so... that covers responsible disclosure.
 ## License
 
 This project is licensed under the MIT License.
+
+
+## Flyte Customizations
+
+This fork of `furo` adds some flyte-specific customizations. For example, the
+css styles are slightly different from the upstream repo, the `navbar.html`
+file has custom elements, and the `main.js` file has custom logic to pull
+together all the different Flyte documentation sites.
+
+### Setup
+
+We recommend using `conda` to isolate your enviroment from your system's `node`
+installation. [Install miniconda](https://docs.conda.io/en/latest/miniconda.html)
+depending on your system, then create a virtual environment:
+
+```
+conda create -n flyte-furo python=3.9
+conda activate flyte-furo
+conda install -c conda-forge nox nodejs==15.14.0
+```
+
+You may have to create a new shell session to make sure the correct node
+executable is being used. You should expect it to point to the path of your
+conda environment, for example:
+
+```
+$ which node
+/path/to/miniconda3/envs/flyte-furo/bin/node
+```
+
+Then install npm dependencies with `npm install`.
+
+### Building the Docs Locally
+
+To build the docs locally, do:
+
+```
+$ nox -s docs-live
+```
+
+### Updating the `furo` package
+
+Since we don't have a proper deployment system for our fork of furo, we always
+install furo in the flyte docs using:
+
+```
+pip install git+https://github.com/flyteorg/furo@main
+```
+
+Therefore, we need to check in all the compiled code that's typically not
+checked into git. So if you make changes to any of the `css` or `js` files in
+the `src` directory, you need to compile the project and check it in:
+
+```
+./node_modules/.bin/gulp build
+```
+
+Then add the changes and commit it as usual.
