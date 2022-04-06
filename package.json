@@ -13,9 +13,10 @@
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.6.0",
     "node-gyp": "^3.8.0",
+    "node-sass": "^7.0.1",
     "normalize.css": "^8.0.1",
     "postcss": "^7.0.32",
     "postcss-easy-import": "^3.0.0",
-    "sass": "^1.46.0"
+    "sass": "^1.49.11"
   }
 }
