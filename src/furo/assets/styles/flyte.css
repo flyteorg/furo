@@ -81,6 +81,10 @@ h6 {
   text-align: center;
 }
 
+.sidebar-tree .caption {
+  padding: 0;
+}
+
 .caption-text {
   font-size: 15px;
   color: #696969;
