@@ -24,11 +24,6 @@
         </a>
       </div>
       <div>
-        <a href="{{ pathto('concepts/basics') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/concepts/basics.html' }}">
-          <div class="brand">{{ _("Concepts") }}</div>
-        </a>
-      </div>
-      <div>
         <a href="{{ pathto('integrations') if project == 'Flytesnacks' else 'https://docs.flyte.org/projects/cookbook/en/latest/integrations.html' }}">
           <div class="brand">{{ _("Integrations") }}</div>
         </a>
@@ -41,6 +36,11 @@
       <div>
         <a href="{{ pathto('reference/index') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/reference/index.html' }}">
           <div class="brand">{{ _("API Reference") }}</div>
+        </a>
+      </div>
+      <div>
+        <a href="{{ pathto('concepts/basics') if project == 'Flyte' else 'https://docs.flyte.org/en/latest/concepts/basics.html' }}">
+          <div class="brand">{{ _("Concepts") }}</div>
         </a>
       </div>
       <div>
