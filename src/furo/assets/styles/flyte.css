@@ -447,6 +447,7 @@ article .align-default {
 /* readthedocs custom styling */
 .rst-versions.rst-badge {
   bottom: 80px !important;
+  max-width: none !important;
 }
 
 .rst-versions.rst-badge.shift-up .rst-current-version .fa-book {
