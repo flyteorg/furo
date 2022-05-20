@@ -1,0 +1,13 @@
+// Spacing for various elements on the page
+//
+// If the user wants to tweak things in a certain way, they are permitted to.
+// They also have to deal with the consequences though!
+@mixin spacing {
+  // Header!
+  --header-height: calc(
+    var(--sidebar-item-line-height) + 4 * #{var(--sidebar-item-spacing-vertical)}
+  );
+  --header-padding: 0.5rem;
+
+  // Sidebar
+  --sidebar-tree-space-above: 1.5rem;

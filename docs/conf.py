@@ -35,6 +35,8 @@ extensions = [
     # External stuff
     "myst_parser",
     "sphinx_copybutton",
+    #Smriti-testing (line 39)
+    "sphinx_rtd_dark_mode",
     "sphinx_inline_tabs",
 ]
 templates_path = ["_templates"]
