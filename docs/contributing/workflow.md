@@ -7,13 +7,13 @@ This page describes the tooling used during development of this project. It also
 This project uses the [GitHub Flow] for collaboration. The codebase contains Python code, [Jinja2]-based HTML pages, [Sass] stylesheets and Javascript code.
 
 - [nox] is used for automating development tasks.
-- [Gulp]-based build pipeline is used to process the Sass and Javascript files.
+- [Webpack]-based build pipeline is used to process the Sass and Javascript files.
 - [sphinx-autobuild] is used to provide live-reloading pages when working on the theme.
 - [pre-commit] is used for running the linters.
 
 ## Initial Setup
 
-To work on this project, you need to have git 2.17+, Python 3.6+ and NodeJS 12.
+To work on this project, you need to have git 2.17+ and Python 3.6+. You also need to be on a platform that is officially supported by NodeJS 16.
 
 - Clone this project using git:
 
@@ -22,10 +22,9 @@ To work on this project, you need to have git 2.17+, Python 3.6+ and NodeJS 12.
   cd furo
   ```
 
-- Install the project's dependencies:
+- Install the project's development workflow runner:
 
   ```
-  npm install
   pip install nox
   ```
 
@@ -83,23 +82,16 @@ Generate the documentation for Furo into the `build/docs` folder. This (mostly) 
 
 There are times when you might want to install the in-development version of Furo (mostly for testing that a fix actually does fix things).
 
-Furo cannot be installed directly using pip with the Git repository directly. This is because the Git repository does not contained the compiled CSS/JS. The distributions on PyPI have the compiled assets (because they're platform agnostic and plain text).
+This can be done by directly telling pip to install from Furo from GitHub. You likely want to install from a zip archive, to avoid cloning the entire Git history:
 
 ```sh
-# Clone the repository
-git clone https://github.com/pradyunsg/furo.git
-cd furo
-# Build the static assets
-npm install
-./node_modules/.bin/gulp build
-# Install with pip
-pip install .
+pip install https://github.com/pradyunsg/furo/archive/refs/heads/main.zip
 ```
 
 [github flow]: https://guides.github.com/introduction/flow/
 [nox]: https://nox.readthedocs.io/en/stable/
 [jinja2]: https://jinja.palletsprojects.com
 [sass]: https://sass-lang.com
-[gulp]: https://gulpjs.com
+[webpack]: https://webpack.js.org/
 [sphinx-autobuild]: https://github.com/executablebooks/sphinx-autobuild
 [pre-commit]: https://pre-commit.com/

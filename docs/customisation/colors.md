@@ -12,9 +12,9 @@ It is possible to use different content for light and dark mode, by setting
 `only-dark` and `only-light` classes on the content. This is the
 [recommended approach](light-dark-images) for handling images with backgrounds.
 
-## Defining overrides for defaults
+## Using your own colors
 
-Furo allows defining [CSS variables that overrides its default values](css-variables). The exact variable names to use can be found in Furo's source code, where the [variable declarations](https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables) are made.
+Furo allows defining [CSS variables that overrides its default values](css-variables). The exact variable names to use can be found in Furo's source code [here](https://github.com/pradyunsg/furo/tree/main/src/furo/assets/styles/variables).
 
 This mechanism allows configuring nearly every facet of Furo's design, including spacing between various items and the colors of nearly every component.
 
@@ -24,10 +24,6 @@ Changing Furo's blue accent (used for stylising links, sidebar's content etc) to
 ```py
 html_theme_options = {
     "light_css_variables": {
-        "color-brand-primary": "#7C4DFF",
-        "color-brand-content": "#7C4DFF",
-    },
-    "dark_css_variables": {
         "color-brand-primary": "#7C4DFF",
         "color-brand-content": "#7C4DFF",
     },

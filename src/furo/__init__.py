@@ -1,6 +1,6 @@
 """A clean customisable Sphinx documentation theme."""
 
-__version__ = "2021.07.05.dev39"
+__version__ = "2022.04.07.dev1"
 
 import hashlib
 import logging
@@ -9,11 +9,14 @@ import os
 import warnings
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Iterator, List, Optional
 
-import pygments
-import sphinx
+import sphinx.application
 from bs4 import BeautifulSoup
+from pygments.formatters import HtmlFormatter
+from pygments.style import Style
+from pygments.token import Text
+from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.highlighting import PygmentsBridge
 
 from .navigation import get_navigation_tree
@@ -22,17 +25,20 @@ THEME_PATH = (Path(__file__).parent / "theme" / "furo").resolve()
 
 logger = logging.getLogger(__name__)
 
+# GLOBAL STATE
+_KNOWN_STYLES_IN_USE: Dict[str, Optional[Style]] = {
+    "light": None,
+    "dark": None,
+}
+
 
 @lru_cache(maxsize=None)
-def has_exactly_one_list_item(toc: str) -> bool:
-    """Check if the toc has exactly one list item."""
+def has_not_enough_items_to_show_toc(toc: str) -> bool:
+    """Check if the toc has one or fewer items."""
     assert toc
 
     soup = BeautifulSoup(toc, "html.parser")
-    if len(soup.find_all("li")) == 1:
-        return True
-
-    return False
+    return len(soup.find_all("li")) <= 1
 
 
 def wrap_elements_that_can_get_too_wide(content: str) -> str:
@@ -58,11 +64,11 @@ def wrap_elements_that_can_get_too_wide(content: str) -> str:
 
 
 def get_pygments_style_colors(
-    style: pygments.style.Style, *, fallbacks: Dict[str, str]
+    style: Style, *, fallbacks: Dict[str, str]
 ) -> Dict[str, str]:
     """Get background/foreground colors for given pygments style."""
     background = style.background_color
-    text_colors = style.style_for_token(pygments.token.Text)
+    text_colors = style.style_for_token(Text)
     foreground = text_colors["color"]
 
     if not background:
@@ -115,7 +121,22 @@ def _compute_hide_toc(context: Dict[str, Any]) -> bool:
     elif not context["toc"]:
         return True
 
-    return has_exactly_one_list_item(context["toc"])
+    return has_not_enough_items_to_show_toc(context["toc"])
+
+
+@lru_cache(maxsize=None)
+def _asset_hash(path: str) -> str:
+    """Append a `?digest=` to an url based on the file content."""
+    full_path = THEME_PATH / "static" / path
+    digest = hashlib.sha1(full_path.read_bytes()).hexdigest()
+
+    return f"_static/{path}?digest={digest}"
+
+
+def _add_asset_hashes(static: List[str], add_digest_to: List[str]) -> None:
+    for asset in add_digest_to:
+        index = static.index("_static/" + asset)
+        static[index].filename = _asset_hash(asset)  # type: ignore
 
 
 @lru_cache(maxsize=None)
@@ -147,6 +168,23 @@ def _html_page_context(
     if app.config.html_theme != "furo":
         return
 
+    if "css_files" in context:
+        if "_static/styles/furo.css" not in context["css_files"]:
+            raise Exception(
+                "This documentation is not using `furo.css` as the stylesheet. "
+                "If you have set `html_style` in your conf.py file, remove it."
+            )
+
+        _add_asset_hashes(
+            context["css_files"],
+            ["styles/furo.css", "styles/furo-extensions.css"],
+        )
+    if "scripts" in context:
+        _add_asset_hashes(
+            context["scripts"],
+            ["scripts/furo.js"],
+        )
+
     # Basic constants
     context["furo_version"] = __version__
 
@@ -156,15 +194,19 @@ def _html_page_context(
 
     # Inject information about styles
     context["furo_pygments"] = {
-        "light": get_colors_for_codeblocks(
-            app.builder.highlighter,
-            fg="black",
-            bg="white",
+        "light": get_pygments_style_colors(
+            _KNOWN_STYLES_IN_USE["light"],
+            fallbacks=dict(
+                foreground="black",
+                background="white",
+            ),
         ),
-        "dark": get_colors_for_codeblocks(
-            app.builder.dark_highlighter,
-            fg="white",
-            bg="black",
+        "dark": get_pygments_style_colors(
+            _KNOWN_STYLES_IN_USE["dark"],
+            fallbacks=dict(
+                foreground="white",
+                background="black",
+            ),
         ),
     }
 
@@ -210,16 +252,57 @@ def _html_page_context(
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if app.config.html_theme != "furo":
         return
+    if "furo" in app.config.extensions:
+        raise Exception(
+            "Did you list it in the `extensions` in conf.py? "
+            "If so, please remove it. Furo does not work with non-HTML builders "
+            "and specifying it as an `html_theme` is sufficient."
+        )
 
-    # Our `main.js` file needs to be loaded as soon as possible.
-    app.add_js_file("scripts/main.js", priority=200)
+    if not isinstance(app.builder, StandaloneHTMLBuilder):
+        raise Exception(
+            "Furo is being used as an extension in a non-HTML build. "
+            "This should not happen."
+        )
+
+    # Our JS file needs to be loaded as soon as possible.
+    app.add_js_file("scripts/furo.js", priority=200)
 
     # 500 is the default priority for extensions, we want this after this.
     app.add_css_file("styles/furo-extensions.css", priority=600)
 
     builder = app.builder
-    assert builder.dark_highlighter is None, "this shouldn't happen."
+    assert builder, "what?"
+    assert (
+        builder.highlighter is not None
+    ), "there should be a default style known to Sphinx"
+    assert (
+        builder.dark_highlighter is None
+    ), "this shouldn't be a dark style known to Sphinx"
+    update_known_styles_state(app)
 
+    def _update_default(key: str, *, new_default: Any) -> None:
+        app.config.values[key] = (new_default, *app.config.values[key][1:])
+
+    # Change the default permalinks icon
+    _update_default("html_permalinks_icon", new_default="#")
+
+
+def update_known_styles_state(app: sphinx.application.Sphinx) -> None:
+    """Update a global store of known styles of this application."""
+    global _KNOWN_STYLES_IN_USE
+
+    _KNOWN_STYLES_IN_USE = {
+        "light": _get_light_style(app),
+        "dark": _get_dark_style(app),
+    }
+
+
+def _get_light_style(app: sphinx.application.Sphinx) -> Style:
+    return app.builder.highlighter.formatter_args["style"]
+
+
+def _get_dark_style(app: sphinx.application.Sphinx) -> Style:
     # number_of_hours_spent_figuring_this_out = 7
     #
     # Hello human in the future! This next block of code needs a bit of a story, and
@@ -261,22 +344,6 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     # fall back to the original behaviour and also print a warning, so that hopefully
     # someone will report this. Maybe it'll all be fixed, and I can remove this whole
     # hack and this giant comment.
-    #
-    # But wait, this hack actually has another layer to it.
-    #
-    # This whole setup depends on an internal implementation detail in Sphinx -- that
-    # it "adds" the `pygments_dark.css` file for inclusion in output, at a different
-    # point than where it is generates the file. The dark syntax highlighting mechanism
-    # of this theme depends on that fact -- we don't actually set `pygments_dark_style`
-    # in our theme.conf file.
-    #
-    # Instead, we stick our filthy monkey hands into Sphinx's builder, to patch the
-    # builder to generate the `pygments_dark.css` file as if this theme actually sets
-    # `pygments_dark_style`. This results in Sphinx generating the file without
-    # injecting a custom CSS file for it. Then, we include that stylesheet in our HTML
-    # via a hand-crafted <link> tag. There's 2 benefits to this approach: (1) it works,
-    # (2) we can, at some point in the future, pivot to a different strategy for
-    # including the dark mode syntax highlighting styles.
 
     # HACK: begins here
     dark_style = None
@@ -300,8 +367,56 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if dark_style is None:
         dark_style = app.config.pygments_dark_style
 
-    builder.dark_highlighter = PygmentsBridge("html", dark_style)
-    # HACK: ends here
+    return PygmentsBridge("html", dark_style).formatter_args["style"]
+
+
+def _get_styles(formatter: HtmlFormatter, *, prefix: str) -> Iterator[str]:
+    """Get styles out of a formatter, where everything has the correct prefix."""
+    for line in formatter.get_linenos_style_defs():
+        yield f"{prefix} {line}"
+    yield from formatter.get_background_style_defs(prefix)
+    yield from formatter.get_token_style_defs(prefix)
+
+
+def get_pygments_stylesheet() -> str:
+    """Generate the theme-specific pygments.css.
+
+    There is no way to tell Sphinx how the theme handles dark mode; at this time.
+    """
+    light_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["light"])
+    dark_formatter = HtmlFormatter(style=_KNOWN_STYLES_IN_USE["dark"])
+
+    lines: List[str] = []
+
+    lines.extend(_get_styles(light_formatter, prefix=".highlight"))
+
+    lines.append("@media not print {")
+
+    dark_prefix = 'body[data-theme="dark"] .highlight'
+    lines.extend(_get_styles(dark_formatter, prefix=dark_prefix))
+
+    not_light_prefix = 'body:not([data-theme="light"]) .highlight'
+    lines.append("@media (prefers-color-scheme: dark) {")
+    lines.extend(_get_styles(dark_formatter, prefix=not_light_prefix))
+    lines.append("}")
+
+    lines.append("}")
+
+    return "\n".join(lines)
+
+
+# Yup, we overwrite the default pygments.css file, because it can't possibly respect
+# the needs of this theme.
+def _overwrite_pygments_css(
+    app: sphinx.application.Sphinx,
+    exception: Optional[Exception],
+) -> None:
+    if exception is not None:
+        return
+
+    assert app.builder
+    with open(os.path.join(app.builder.outdir, "_static", "pygments.css"), "w") as f:
+        f.write(get_pygments_stylesheet())
 
 
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
@@ -316,6 +431,7 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
 
     app.connect("html-page-context", _html_page_context)
     app.connect("builder-inited", _builder_inited)
+    app.connect("build-finished", _overwrite_pygments_css)
 
     # This adds the rate-the-docs widget directly to our theme
     # https://github.com/medmunds/rate-the-docs

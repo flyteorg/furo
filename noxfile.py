@@ -3,7 +3,6 @@
 import datetime
 import glob
 import os
-import tempfile
 
 import nox
 
@@ -14,60 +13,73 @@ nox.options.sessions = ["lint", "test"]
 #
 # Helpers
 #
-def _install_this_project_with_flit(session, *, extras=None, editable=False):
-    session.install("flit")
-    args = []
-    if extras:
-        args.append("--extras")
-        args.append(",".join(extras))
-    if editable:
-        args.append("--pth-file" if os.name == "nt" else "--symlink")
+def _determine_versions(current_version, date):
+    """Returns (version_in_release, version_after_release)"""
+    dev_num = int(current_version.rsplit(".dev", 1)[-1])
+    today_version = date.strftime("%Y.%m.%d")
 
-    session.run("flit", "install", "--deps=production", *args, silent=True)
+    if current_version.startswith(today_version):
+        # There was a release earlier today. Let's tack on another version
+        # number segment onto this to make it unique.
+        return (
+            today_version + f".{dev_num}",
+            today_version + f".dev{dev_num+1}",
+        )
+    return (
+        today_version,
+        today_version + ".dev1",
+    )
+
+
+# fmt: off
+assert (
+    _determine_versions("2021.08.17.dev44", date=datetime.date(2021, 8, 17))
+    == ("2021.08.17.44", "2021.08.17.dev45")
+), "same day 1"
+assert (
+    _determine_versions("2021.08.17.dev1", date=datetime.date(2021, 8, 17))
+    == ("2021.08.17.1", "2021.08.17.dev2")
+), "same day 2"
+assert (
+    _determine_versions("2021.08.17.dev44", date=datetime.date(2021, 8, 18))
+    == ("2021.08.18", "2021.08.18.dev1")
+), "different day"
+# fmt: on
+
+
+def get_release_versions(version_file):
+    marker = "__version__ = "
+
+    with open(version_file) as f:
+        for line in f:
+            if line.startswith(marker):
+                current_version = line[len(marker) + 1 : -2]
+                break
+        else:
+            raise RuntimeError("Could not find current version.")
+
+    return _determine_versions(current_version, date=datetime.date.today())
 
 
 #
 # Development Sessions
 #
-@nox.session(name="docs-live", reuse_venv=True)
-def docs_live(session):
-    if session.posargs:
-        docs_dir = session.posargs[0]
-        additional_dependencies = session.posargs[1:]
-    else:
-        docs_dir = "docs/"
-        additional_dependencies = ()
-
-    build_command = "./node_modules/.bin/gulp build"
-    _install_this_project_with_flit(session, extras=["doc"], editable=True)
-    session.install("sphinx-autobuild", *additional_dependencies)
-
-    with tempfile.TemporaryDirectory() as destination:
-        session.run(
-            "sphinx-autobuild",
-            # for sphinx-autobuild
-            "--port=0",
-            "--watch=src/",
-            f"--pre-build={build_command}",
-            r"--re-ignore=src/.*/theme/furo/static/.*\.(css|js)",  # ignore the generated files
-            "--open-browser",
-            # for sphinx
-            "-b=dirhtml",
-            "-a",
-            docs_dir,
-            destination,
-        )
-
-
 @nox.session(reuse_venv=True)
 def docs(session):
-    # Generate relevant files prior to installation
-    session.run("gulp", "build", external=True)
-
-    _install_this_project_with_flit(session, extras=["doc"], editable=False)
+    session.install("-r", "docs/requirements.txt")
+    session.install(".")
 
     # Generate documentation into `build/docs`
     session.run("sphinx-build", "-b", "dirhtml", "-v", "docs/", "build/docs")
+
+
+@nox.session(name="docs-live", reuse_venv=True)
+def docs_live(session):
+    session.install("-r", "docs/requirements.txt")
+    session.install("-e", ".", "sphinx-theme-builder[cli]")
+
+    # Generate documentation into `build/docs`
+    session.run("stb", "serve", "docs/")
 
 
 @nox.session(reuse_venv=True)
@@ -84,29 +96,10 @@ def lint(session):
 
 @nox.session
 def test(session):
-    _install_this_project_with_flit(session, extras=["test"])
+    session.install("-e", ".[test]")
 
     args = session.posargs or ["-n", "auto", "--cov", PACKAGE_NAME]
     session.run("pytest", *args)
-
-
-def get_release_versions(version_file):
-    marker = "__version__ = "
-
-    with open(version_file) as f:
-        for line in f:
-            if line.startswith(marker):
-                version = line[len(marker) + 1 : -2]
-                current_number = int(version.split(".dev")[-1])
-                break
-        else:
-            raise RuntimeError("Could not find current version.")
-
-    today = datetime.date.today()
-    release_version = today.strftime(f"%Y.%m.%d.beta{current_number}")
-    next_version = today.strftime(f"%Y.%m.%d.dev{current_number+1}")
-
-    return release_version, next_version
 
 
 @nox.session
@@ -118,7 +111,12 @@ def release(session):
 
     release_version, next_version = get_release_versions(version_file)
 
-    session.install("flit", "twine", "release-helper")
+    session.install(
+        "keyring",
+        "release-helper",
+        "sphinx-theme-builder[cli]",
+        "twine",
+    )
 
     # Sanity Checks
     session.run("release-helper", "version-check-validity", release_version)
@@ -139,8 +137,7 @@ def release(session):
     )
 
     # Build the package
-    session.run("gulp", "build", external=True)
-    session.run("flit", "build")
+    session.run("stb", "package")
     session.run("twine", "check", *glob.glob("dist/*"))
 
     # Tag the commit
