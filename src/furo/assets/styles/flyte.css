@@ -433,6 +433,7 @@ article .align-default {
 .ratd-widget .ratd-panel-suggestion .btn {
   background-color: var(--color-link);
   border-color: var(--color-link);
+  color: var(--color-content-foreground) !important;
 }
 
 .ratd-widget i {

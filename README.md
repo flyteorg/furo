@@ -155,10 +155,7 @@ pip install git+https://github.com/flyteorg/furo@main
 
 Therefore, we need to check in all the compiled code that's typically not
 checked into git. So if you make changes to any of the `css` or `js` files in
-the `src` directory, you need to compile the project and check it in:
+the `src` directory, you need to compile the project and check it in.
 
-```
-./node_modules/.bin/gulp build
-```
-
-Then add the changes and commit it as usual.
+The `nox -s docs-live` command above should generate all the files needed, so after
+a successful build you can add the changes and commit it as usual.

@@ -230,14 +230,6 @@ def _html_page_context(
     # Flyte Customization
     # ===================
     #
-    # Make sure that the links at the bottom right side of the page don't show up
-    context["display_github"] = False
-
-    
-    # ===================
-    # Flyte Customization
-    # ===================
-    #
     # This currently shows an "Edit on Github" link for each page, supporting
     # sphinx gallery pages, which are automatically generated from a python file.
     path = os.path.relpath(doctree.get('source'), app.builder.srcdir)
