@@ -1,63 +1,79 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Code Blocks" href="../code-blocks/" /><link rel="prev" title="Admonitions" href="../admonitions/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Code Blocks" href="../code-blocks/" /><link rel="prev" title="Admonitions" href="../admonitions/" />
 
-    <meta name="generator" content="sphinx-3.5.3, furo 2021.03.20.dev32"/>
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07.dev1"/>
         <title>API documentation - Furo</title>
-      <link rel="stylesheet" href="../../_static/styles/furo.css?digest=0def474bc7fe9c03c16fc1b5c9584ab061e67f82">
-    <link rel="stylesheet" href="../../_static/pygments.css">
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../../_static/pygments_dark.css">
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=62029f64d777ab072c743ee3b014b2841d0816f6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=a12cbe55fa3815985dd47d1de2af3709989affae" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pied-piper-admonition.css" />
+    
     
 
 
 <style>
-  :root {
+  body {
     --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
-  }
-
-  /* For allowing end-user-specific overrides */
-  .override-light {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  .override-dark {
-    --color-code-background: #202020;
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
+      }
+    }
   }
-</style><link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" href="../../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
-  <body dir="">
+</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@alpha">
+    <link rel="preconnect" href="https://WLG0MZB58Q-dsn.algolia.net" crossorigin /><script src="https://kit.fontawesome.com/ef4deb7d2f.js" crossorigin="anonymous"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YQL24L5CKY', {
+        "custom_map": {
+          "dimension0": "event_category",
+          "dimension1": "event_label",
+          "dimension2": "suggestion_feedback",
+          "dimension3": "rtd_project",
+          "dimension4": "rtd_version"
+        }
+      });
+    </script>
+  </head>
+  <body>
     
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z"/>
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-menu">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -65,33 +81,146 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-chevron-right">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
     </svg>
   </symbol>
 </svg>
 
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 
+
+<header class="nav-header">
+  <div class="nav-inner">
+    <div class="title-logo">
+      <div>
+        <a href="https://docs.flyte.org/en/latest/index.html"><img src="../../_static/" alt="Logo"/></a>
+      </div>
+      <a href="https://docs.flyte.org/en/latest/index.html"><div class="brand">Furo</div></a>
+    </div>
+    <div class="nav-toggler"><i class="fas fa-chevron-down"></i></div>
+    <div class="main-sections nav-collapsed">
+      <div>
+        <a href="https://docs.flyte.org/en/latest/getting_started/index.html">
+          <div class="brand">Getting Started</div>
+        </a>
+      </div>
+      <div>
+        <a href="https://docs.flyte.org/projects/cookbook/en/latest/index.html">
+          <div class="brand">User Guide</div>
+        </a>
+      </div>
+      <div>
+        <a href="https://docs.flyte.org/projects/cookbook/en/latest/tutorials.html">
+          <div class="brand">Tutorials</div>
+        </a>
+      </div>
+      <div>
+        <a href="https://docs.flyte.org/projects/cookbook/en/latest/integrations.html">
+          <div class="brand">Integrations</div>
+        </a>
+      </div>
+      <div>
+        <a href="https://docs.flyte.org/en/latest/deployment/index.html">
+          <div class="brand">Deployment</div>
+        </a>
+      </div>
+      <div>
+        <a href="https://docs.flyte.org/en/latest/reference/index.html">
+          <div class="brand">API Reference</div>
+        </a>
+      </div>
+      <div>
+        <a href="https://docs.flyte.org/en/latest/concepts/basics.html">
+          <div class="brand">Concepts</div>
+        </a>
+      </div>
+      <div>
+        <a href="https://docs.flyte.org/en/latest/community/index.html">
+          <div class="brand">Community</div>
+        </a>
+      </div>
+    </div>
+    <div class="external-links nav-collapsed">
+      <div>
+        <a href="https://slack.flyte.org" target="_blank" title="Slack">
+          <div><i class="fab fa-slack icon"></i></div>
+        </a>
+      </div>
+      <div>
+        <a href="https://www.flyte.org" target="_blank">
+          <div>flyte.org<i class="fas fa-external-link-alt link-out"></i></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
 
 <div class="page">
+  <!-- header for mobile view -->
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
         <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
-    <div class="header-center">
-      <a href="../../"><div class="brand">Furo</div></a>
-    </div>
     <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
       <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -99,29 +228,34 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+      <div class="sidebar-sticky"><!-- <a class="sidebar-brand" href="../../">
   
   
   <span class="sidebar-brand-text">Furo</span>
   
-</a><form class="sidebar-search-container" method="get" action="../../search/">
-  <input class="sidebar-search" placeholder=Search name="q">
+</a> --><form class="sidebar-search-container" method="get" action="../../search/">
+  <div class="docsearch"></div>
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
-</form><div class="sidebar-scroll"><div class="sidebar-tree">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/">Quickstart</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../customisation/">Customisation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../customisation/">Customisation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../customisation/logo/">Adding a logo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/announcement/">Adding an announcement banner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/edit-button/">Adding an edit button</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../customisation/colors/">Changing colors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../customisation/fonts/">Changing fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/footer/">Changing footer icons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../customisation/landing-page/">Changing landing page</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../customisation/sidebar/">Changing sidebar elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../customisation/sidebar-title/">Changing sidebar title</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../customisation/toc/">Hiding Contents sidebar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../customisation/injecting/">Injecting code</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../text-formatting/">Text Formatting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../admonitions/">Admonitions</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">API documentation</a></li>
@@ -135,46 +269,81 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../recommendations/">Recommendations</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Development</span></p>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label for="toctree-checkbox-3"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contributing/">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/workflow/">Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/internals/">Internals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../contributing/design/">Design Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../kitchen-sink/">Kitchen Sink</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label for="toctree-checkbox-4"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/demo/">Paragraph Level Markup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/lists_tables/">Lists &amp; Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/really-long/">Really Long Page</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../kitchen-sink/">Kitchen Sink</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/admonitions/">Admonitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/api/">API documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/blocks/">Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/generic/">Generic items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/images/">Images &amp; Figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/lists/">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/really-long/">Really Long Page Title because we should test sidebar wrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/sphinx-design/">sphinx-design stuff</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/structure/">Structural Elements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/structure/#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/tables/">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../kitchen-sink/typography/">Typography</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../stability/">Stability Policy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog/">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../license/">License</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/pradyunsg/furo">GitHub Repository</a></li>
 </ul>
 
 </div>
 </div>
+
       </div>
       
     </div>
   </aside>
-  <main class="main">
+  <div class="main">
     <div class="content">
-      <article role="main">
-        <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
-          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-        </label>
-        <div class="section" id="api-documentation">
-<h1>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/pradyunsg/furo/edit/main/docs/reference/api.md" title="Edit this page">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="api-documentation">
+<h1>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">#</a></h1>
 <p>API documentation serves as an important reference in technical documentation. Sphinx provides many approaches to writing API documentation, from writing them manually as well as automatically generating it from docstrings in your code.</p>
-<p>This example uses <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc" title="(in Sphinx v4.0.0+)"><code class="xref any docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code></a> for generating the API documentation skeleton. <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#module-sphinx.ext.intersphinx" title="(in Sphinx v4.0.0+)"><code class="xref any docutils literal notranslate"><span class="pre">sphinx.ext.intersphinx</span></code></a> provides links for classes in type annotations.</p>
+<p>This example uses <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc" title="(in Sphinx v6.0.0)"><code class="xref any docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code></a> for generating the API documentation skeleton. <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#module-sphinx.ext.intersphinx" title="(in Sphinx v6.0.0)"><code class="xref any docutils literal notranslate"><span class="pre">sphinx.ext.intersphinx</span></code></a> provides links for classes in type annotations.</p>
 <div class="docutils container">
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">reStructuredText</label><div class="tab-content docutils container">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">reStructuredText</label><div class="tab-content docutils">
 <div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">autoclass</span><span class="p">::</span> urllib3.util.Retry
     <span class="nc">:members:</span>
     <span class="nc">:noindex:</span>
@@ -187,8 +356,8 @@ This is a small example from reStructuredText.
 </pre></div>
 </div>
 <dl class="py class">
-<dt>
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">urllib3.util.</span></code><code class="sig-name descname"><span class="pre">Retry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">total=10</span></em>, <em class="sig-param"><span class="pre">connect=None</span></em>, <em class="sig-param"><span class="pre">read=None</span></em>, <em class="sig-param"><span class="pre">redirect=None</span></em>, <em class="sig-param"><span class="pre">status=None</span></em>, <em class="sig-param"><span class="pre">other=None</span></em>, <em class="sig-param"><span class="pre">allowed_methods=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">status_forcelist=None</span></em>, <em class="sig-param"><span class="pre">backoff_factor=0</span></em>, <em class="sig-param"><span class="pre">raise_on_redirect=True</span></em>, <em class="sig-param"><span class="pre">raise_on_status=True</span></em>, <em class="sig-param"><span class="pre">history=None</span></em>, <em class="sig-param"><span class="pre">respect_retry_after_header=True</span></em>, <em class="sig-param"><span class="pre">remove_headers_on_redirect=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">method_whitelist=&lt;object</span> <span class="pre">object&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">urllib3.util.</span></span><span class="sig-name descname"><span class="pre">Retry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_methods=&lt;object</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_forcelist=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backoff_factor=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_on_redirect=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_on_status=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">history=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">respect_retry_after_header=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_headers_on_redirect=&lt;object</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_whitelist=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Retry configuration.</p>
 <p>Each retry attempt will create a new Retry object with updated values, so
 they can be safely reused.</p>
@@ -211,35 +380,35 @@ retries are disabled, in which case the causing exception will be raised.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>Total number of retries to allow. Takes precedence over other counts.</p>
+<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>Total number of retries to allow. Takes precedence over other counts.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">None</span></code> to remove this constraint and fall back on other
 counts.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> to disable and imply <code class="docutils literal notranslate"><span class="pre">raise_on_redirect=False</span></code>.</p>
 </p></li>
-<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many connection-related errors to retry on.</p>
+<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many connection-related errors to retry on.</p>
 <p>These are errors raised before the request is sent to the remote server,
 which we assume has not triggered the server to process the request.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many times to retry on read errors.</p>
+<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on read errors.</p>
 <p>These errors are raised after the request was sent to the server, so the
 request may have side-effects.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many redirects to perform. Limit this to avoid infinite redirect
+<li><p><strong>redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many redirects to perform. Limit this to avoid infinite redirect
 loops.</p>
 <p>A redirect is a HTTP response with a status code 301, 302, 303, 307 or
 308.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> to disable and imply <code class="docutils literal notranslate"><span class="pre">raise_on_redirect=False</span></code>.</p>
 </p></li>
-<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many times to retry on bad status codes.</p>
+<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on bad status codes.</p>
 <p>These are retries made on responses, where status code matches
 <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code>.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many times to retry on other errors.</p>
+<li><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on other errors.</p>
 <p>Other errors are errors that are not connect, read, redirect or status errors.
 These errors might be raised after the request was sent to the server, so the
 request might have side-effects.</p>
@@ -263,7 +432,7 @@ A retry is initiated if the request method is in <code class="docutils literal n
 and the response status code is in <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code>.</p>
 <p>By default, this is disabled with <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </p></li>
-<li><p><strong>backoff_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – <p>A backoff factor to apply between attempts after the second try
+<li><p><strong>backoff_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – <p>A backoff factor to apply between attempts after the second try
 (most errors are resolved immediately by a second try without a
 delay). urllib3 will sleep for:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">backoff</span> <span class="n">factor</span><span class="p">}</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="p">({</span><span class="n">number</span> <span class="n">of</span> <span class="n">total</span> <span class="n">retries</span><span class="p">}</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
@@ -271,20 +440,20 @@ delay). urllib3 will sleep for:</p>
 </div>
 <p>seconds. If the backoff_factor is 0.1, then <code class="xref py py-func docutils literal notranslate"><span class="pre">sleep()</span></code> will sleep
 for [0.0s, 0.2s, 0.4s, …] between retries. It will never be longer
-than <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.BACKOFF_MAX</span></code>.</p>
+than <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.DEFAULT_BACKOFF_MAX</span></code>.</p>
 <p>By default, backoff is disabled (set to 0).</p>
 </p></li>
-<li><p><strong>raise_on_redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether, if the number of redirects is
+<li><p><strong>raise_on_redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether, if the number of redirects is
 exhausted, to raise a MaxRetryError, or to return a response with a
 response code in the 3xx range.</p></li>
-<li><p><strong>raise_on_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Similar meaning to <code class="docutils literal notranslate"><span class="pre">raise_on_redirect</span></code>:
+<li><p><strong>raise_on_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Similar meaning to <code class="docutils literal notranslate"><span class="pre">raise_on_redirect</span></code>:
 whether we should raise an exception, or return a response,
 if status falls in <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code> range and retries have
 been exhausted.</p></li>
-<li><p><strong>history</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – The history of the request encountered during
+<li><p><strong>history</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – The history of the request encountered during
 each call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">increment()</span></code>. The list is in the order
 the requests occurred. Each list item is of class <code class="xref py py-class docutils literal notranslate"><span class="pre">RequestHistory</span></code>.</p></li>
-<li><p><strong>respect_retry_after_header</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether to respect Retry-After header on status codes defined as
+<li><p><strong>respect_retry_after_header</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether to respect Retry-After header on status codes defined as
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.RETRY_AFTER_STATUS_CODES</span></code> or not.</p></li>
 <li><p><strong>remove_headers_on_redirect</strong> (<em>iterable</em>) – Sequence of headers to remove from the request when a response
 indicating a redirect is returned before firing off the redirected
@@ -293,55 +462,55 @@ request.</p></li>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">BACKOFF_MAX</span></code><em class="property"> <span class="pre">=</span> <span class="pre">120</span></em></dt>
-<dd><p>Maximum backoff time.</p>
-</dd></dl>
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">DEFAULT_ALLOWED_METHODS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">frozenset({'DELETE',</span> <span class="pre">'GET',</span> <span class="pre">'HEAD',</span> <span class="pre">'OPTIONS',</span> <span class="pre">'PUT',</span> <span class="pre">'TRACE'})</span></em></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEFAULT_ALLOWED_METHODS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'DELETE',</span> <span class="pre">'GET',</span> <span class="pre">'HEAD',</span> <span class="pre">'OPTIONS',</span> <span class="pre">'PUT',</span> <span class="pre">'TRACE'})</span></em></dt>
 <dd><p>Default methods to be used for <code class="docutils literal notranslate"><span class="pre">allowed_methods</span></code></p>
 </dd></dl>
 <dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">DEFAULT_REMOVE_HEADERS_ON_REDIRECT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">frozenset({'Authorization'})</span></em></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEFAULT_BACKOFF_MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">120</span></em></dt>
+<dd><p>Maximum backoff time.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEFAULT_REMOVE_HEADERS_ON_REDIRECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'Authorization'})</span></em></dt>
 <dd><p>Default headers to be used for <code class="docutils literal notranslate"><span class="pre">remove_headers_on_redirect</span></code></p>
 </dd></dl>
 <dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">RETRY_AFTER_STATUS_CODES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">frozenset({413,</span> <span class="pre">429,</span> <span class="pre">503})</span></em></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">RETRY_AFTER_STATUS_CODES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({413,</span> <span class="pre">429,</span> <span class="pre">503})</span></em></dt>
 <dd><p>Default status codes to be used for <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code></p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_int</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">retries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.from_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">retries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.from_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Backwards-compatibility for the old retries format.</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">get_backoff_time</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.get_backoff_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_backoff_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.get_backoff_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Formula for computing the current backoff</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">get_retry_after</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.get_retry_after"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_retry_after</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.get_retry_after"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Get the value of Retry-After in seconds.</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">increment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_stacktrace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.increment"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">increment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_stacktrace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.increment"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Return a new Retry object with incremented retry counters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>response</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPResponse</span></code>) – A response object, or None, if the server did not
 return a response.</p></li>
-<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.9)"><em>Exception</em></a>) – An error encountered during the request, or
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><em>Exception</em></a>) – An error encountered during the request, or
 None if the response was received successfully.</p></li>
 </ul>
 </dd>
@@ -351,13 +520,13 @@ None if the response was received successfully.</p></li>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">is_exhausted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.is_exhausted"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">is_exhausted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.is_exhausted"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Are we out of retries?</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">is_retry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_retry_after</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.is_retry"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">is_retry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_retry_after</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.is_retry"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Is this method/status code retryable? (Based on allowlists and control
 variables such as the number of total retries to allow, whether to
 respect the Retry-After header, whether this header is present, and
@@ -365,8 +534,8 @@ whether the returned status code is on the list of status codes to
 be retried upon on the presence of the aforementioned header)</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">sleep</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.sleep"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sleep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.sleep"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Sleep between retry attempts.</p>
 <p>This method will respect a server’s <code class="docutils literal notranslate"><span class="pre">Retry-After</span></code> response header
 and sleep the duration of the time requested. If that is not present, it
@@ -375,8 +544,8 @@ this method will return immediately.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt>
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">urllib3.util.</span></code><code class="sig-name descname"><span class="pre">Timeout</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">total=None</span></em>, <em class="sig-param"><span class="pre">connect=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">read=&lt;object</span> <span class="pre">object&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">urllib3.util.</span></span><span class="sig-name descname"><span class="pre">Timeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect=&lt;object</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Timeout configuration.</p>
 <p>Timeouts can be defined as a default for a pool:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timeout</span> <span class="o">=</span> <span class="n">Timeout</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="mf">7.0</span><span class="p">)</span>
@@ -396,18 +565,18 @@ this method will return immediately.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – <p>This combines the connect and read timeouts into one; the read timeout
+<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – <p>This combines the connect and read timeouts into one; the read timeout
 will be set to the time leftover from the connect attempt. In the
 event that both a connect timeout and a total are specified, or a read
 timeout and a total are specified, the shorter timeout will be applied.</p>
 <p>Defaults to None.</p>
 </p></li>
-<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – The maximum amount of time (in seconds) to wait for a connection
+<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – The maximum amount of time (in seconds) to wait for a connection
 attempt to a server to succeed. Omitting the parameter will default the
 connect timeout to the system default, probably <a class="reference external" href="http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535">the global default
 timeout in socket.py</a>.
 None will set an infinite timeout for connection attempts.</p></li>
-<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – <p>The maximum amount of time (in seconds) to wait between consecutive
+<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – <p>The maximum amount of time (in seconds) to wait between consecutive
 read operations for a response from the server. Omitting the parameter
 will default the read timeout to the system default, probably <a class="reference external" href="http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535">the
 global default timeout in socket.py</a>.
@@ -437,13 +606,13 @@ time, consider having a second “watcher” thread to cut off a slow
 request.</p>
 </div>
 <dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">DEFAULT_TIMEOUT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;</span></em></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEFAULT_TIMEOUT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;object</span> <span class="pre">object&gt;</span></em></dt>
 <dd><p>A sentinel object representing the default timeout value</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">clone</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.clone"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.clone"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Create a copy of the timeout object</p>
 <p>Timeout properties are stored per-pool but each request needs a fresh
 Timeout object to ensure each one has its own start/stop configured.</p>
@@ -456,9 +625,9 @@ Timeout object to ensure each one has its own start/stop configured.</p>
 </dd>
 </dl>
 </dd></dl>
-<dl class="py method">
-<dt>
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">connect_timeout</span></code></dt>
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect_timeout</span></span></dt>
 <dd><p>Get the value to use when setting a connection timeout.</p>
 <p>This will be a positive float or integer, the value None
 (never timeout), or the default system timeout.</p>
@@ -472,8 +641,8 @@ Timeout object to ensure each one has its own start/stop configured.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_float</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.from_float"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.from_float"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Create a new Timeout from a legacy timeout value.</p>
 <p>The timeout value used by httplib.py sets the same timeout on the
 connect(), and recv() socket requests. This creates a <code class="xref py py-class docutils literal notranslate"><span class="pre">Timeout</span></code>
@@ -481,7 +650,7 @@ object that sets the individual timeouts to the <code class="docutils literal no
 passed to this function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>timeout</strong> (<em>integer</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>sentinel default object</em><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – The legacy timeout value.</p>
+<dd class="field-odd"><p><strong>timeout</strong> (<em>integer</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>sentinel default object</em><em>, or </em><em>None</em>) – The legacy timeout value.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Timeout object</p>
@@ -492,15 +661,15 @@ passed to this function.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">get_connect_duration</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.get_connect_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_connect_duration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.get_connect_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Gets the time elapsed since the call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">start_connect()</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Elapsed time in seconds.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>urllib3.exceptions.TimeoutStateError</strong> – if you attempt
@@ -508,9 +677,9 @@ to get duration for a timer that hasn’t been started.</p>
 </dd>
 </dl>
 </dd></dl>
-<dl class="py method">
-<dt>
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">read_timeout</span></code></dt>
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_timeout</span></span></dt>
 <dd><p>Get the value for the read timeout.</p>
 <p>This assumes some time has elapsed in the connection timeout and
 computes the read timeout appropriately.</p>
@@ -532,8 +701,8 @@ has not yet been called on this object.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">start_connect</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.start_connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">start_connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.start_connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Start the timeout clock, used during a connect() attempt</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -545,7 +714,7 @@ to start a timer that has been started already.</p>
 </dd></dl>
 <p>This is a small example from reStructuredText.</p>
 </div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--2">Markdown (MyST)</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--2">Markdown (MyST)</label><div class="tab-content docutils">
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{eval-rst}
 .. autoclass:: urllib3.util.Retry
     :members:
@@ -560,8 +729,8 @@ This is a small example from Markdown.
 </pre></div>
 </div>
 <dl class="py class">
-<dt>
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">urllib3.util.</span></code><code class="sig-name descname"><span class="pre">Retry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">total=10</span></em>, <em class="sig-param"><span class="pre">connect=None</span></em>, <em class="sig-param"><span class="pre">read=None</span></em>, <em class="sig-param"><span class="pre">redirect=None</span></em>, <em class="sig-param"><span class="pre">status=None</span></em>, <em class="sig-param"><span class="pre">other=None</span></em>, <em class="sig-param"><span class="pre">allowed_methods=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">status_forcelist=None</span></em>, <em class="sig-param"><span class="pre">backoff_factor=0</span></em>, <em class="sig-param"><span class="pre">raise_on_redirect=True</span></em>, <em class="sig-param"><span class="pre">raise_on_status=True</span></em>, <em class="sig-param"><span class="pre">history=None</span></em>, <em class="sig-param"><span class="pre">respect_retry_after_header=True</span></em>, <em class="sig-param"><span class="pre">remove_headers_on_redirect=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">method_whitelist=&lt;object</span> <span class="pre">object&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">urllib3.util.</span></span><span class="sig-name descname"><span class="pre">Retry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_methods=&lt;object</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_forcelist=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backoff_factor=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_on_redirect=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_on_status=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">history=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">respect_retry_after_header=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_headers_on_redirect=&lt;object</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method_whitelist=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Retry configuration.</p>
 <p>Each retry attempt will create a new Retry object with updated values, so
 they can be safely reused.</p>
@@ -584,35 +753,35 @@ retries are disabled, in which case the causing exception will be raised.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>Total number of retries to allow. Takes precedence over other counts.</p>
+<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>Total number of retries to allow. Takes precedence over other counts.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">None</span></code> to remove this constraint and fall back on other
 counts.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> to disable and imply <code class="docutils literal notranslate"><span class="pre">raise_on_redirect=False</span></code>.</p>
 </p></li>
-<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many connection-related errors to retry on.</p>
+<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many connection-related errors to retry on.</p>
 <p>These are errors raised before the request is sent to the remote server,
 which we assume has not triggered the server to process the request.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many times to retry on read errors.</p>
+<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on read errors.</p>
 <p>These errors are raised after the request was sent to the server, so the
 request may have side-effects.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many redirects to perform. Limit this to avoid infinite redirect
+<li><p><strong>redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many redirects to perform. Limit this to avoid infinite redirect
 loops.</p>
 <p>A redirect is a HTTP response with a status code 301, 302, 303, 307 or
 308.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">False</span></code> to disable and imply <code class="docutils literal notranslate"><span class="pre">raise_on_redirect=False</span></code>.</p>
 </p></li>
-<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many times to retry on bad status codes.</p>
+<li><p><strong>status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on bad status codes.</p>
 <p>These are retries made on responses, where status code matches
 <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code>.</p>
 <p>Set to <code class="docutils literal notranslate"><span class="pre">0</span></code> to fail on the first retry of this type.</p>
 </p></li>
-<li><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a>) – <p>How many times to retry on other errors.</p>
+<li><p><strong>other</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a>) – <p>How many times to retry on other errors.</p>
 <p>Other errors are errors that are not connect, read, redirect or status errors.
 These errors might be raised after the request was sent to the server, so the
 request might have side-effects.</p>
@@ -636,7 +805,7 @@ A retry is initiated if the request method is in <code class="docutils literal n
 and the response status code is in <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code>.</p>
 <p>By default, this is disabled with <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </p></li>
-<li><p><strong>backoff_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a>) – <p>A backoff factor to apply between attempts after the second try
+<li><p><strong>backoff_factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a>) – <p>A backoff factor to apply between attempts after the second try
 (most errors are resolved immediately by a second try without a
 delay). urllib3 will sleep for:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">backoff</span> <span class="n">factor</span><span class="p">}</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="p">({</span><span class="n">number</span> <span class="n">of</span> <span class="n">total</span> <span class="n">retries</span><span class="p">}</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
@@ -644,20 +813,20 @@ delay). urllib3 will sleep for:</p>
 </div>
 <p>seconds. If the backoff_factor is 0.1, then <code class="xref py py-func docutils literal notranslate"><span class="pre">sleep()</span></code> will sleep
 for [0.0s, 0.2s, 0.4s, …] between retries. It will never be longer
-than <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.BACKOFF_MAX</span></code>.</p>
+than <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.DEFAULT_BACKOFF_MAX</span></code>.</p>
 <p>By default, backoff is disabled (set to 0).</p>
 </p></li>
-<li><p><strong>raise_on_redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether, if the number of redirects is
+<li><p><strong>raise_on_redirect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether, if the number of redirects is
 exhausted, to raise a MaxRetryError, or to return a response with a
 response code in the 3xx range.</p></li>
-<li><p><strong>raise_on_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Similar meaning to <code class="docutils literal notranslate"><span class="pre">raise_on_redirect</span></code>:
+<li><p><strong>raise_on_status</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Similar meaning to <code class="docutils literal notranslate"><span class="pre">raise_on_redirect</span></code>:
 whether we should raise an exception, or return a response,
 if status falls in <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code> range and retries have
 been exhausted.</p></li>
-<li><p><strong>history</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.9)"><em>tuple</em></a>) – The history of the request encountered during
+<li><p><strong>history</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.10)"><em>tuple</em></a>) – The history of the request encountered during
 each call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">increment()</span></code>. The list is in the order
 the requests occurred. Each list item is of class <code class="xref py py-class docutils literal notranslate"><span class="pre">RequestHistory</span></code>.</p></li>
-<li><p><strong>respect_retry_after_header</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a>) – Whether to respect Retry-After header on status codes defined as
+<li><p><strong>respect_retry_after_header</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><em>bool</em></a>) – Whether to respect Retry-After header on status codes defined as
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Retry.RETRY_AFTER_STATUS_CODES</span></code> or not.</p></li>
 <li><p><strong>remove_headers_on_redirect</strong> (<em>iterable</em>) – Sequence of headers to remove from the request when a response
 indicating a redirect is returned before firing off the redirected
@@ -666,55 +835,55 @@ request.</p></li>
 </dd>
 </dl>
 <dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">BACKOFF_MAX</span></code><em class="property"> <span class="pre">=</span> <span class="pre">120</span></em></dt>
-<dd><p>Maximum backoff time.</p>
-</dd></dl>
-<dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">DEFAULT_ALLOWED_METHODS</span></code><em class="property"> <span class="pre">=</span> <span class="pre">frozenset({'DELETE',</span> <span class="pre">'GET',</span> <span class="pre">'HEAD',</span> <span class="pre">'OPTIONS',</span> <span class="pre">'PUT',</span> <span class="pre">'TRACE'})</span></em></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEFAULT_ALLOWED_METHODS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'DELETE',</span> <span class="pre">'GET',</span> <span class="pre">'HEAD',</span> <span class="pre">'OPTIONS',</span> <span class="pre">'PUT',</span> <span class="pre">'TRACE'})</span></em></dt>
 <dd><p>Default methods to be used for <code class="docutils literal notranslate"><span class="pre">allowed_methods</span></code></p>
 </dd></dl>
 <dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">DEFAULT_REMOVE_HEADERS_ON_REDIRECT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">frozenset({'Authorization'})</span></em></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEFAULT_BACKOFF_MAX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">120</span></em></dt>
+<dd><p>Maximum backoff time.</p>
+</dd></dl>
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEFAULT_REMOVE_HEADERS_ON_REDIRECT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({'Authorization'})</span></em></dt>
 <dd><p>Default headers to be used for <code class="docutils literal notranslate"><span class="pre">remove_headers_on_redirect</span></code></p>
 </dd></dl>
 <dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">RETRY_AFTER_STATUS_CODES</span></code><em class="property"> <span class="pre">=</span> <span class="pre">frozenset({413,</span> <span class="pre">429,</span> <span class="pre">503})</span></em></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">RETRY_AFTER_STATUS_CODES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">frozenset({413,</span> <span class="pre">429,</span> <span class="pre">503})</span></em></dt>
 <dd><p>Default status codes to be used for <code class="docutils literal notranslate"><span class="pre">status_forcelist</span></code></p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_int</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">retries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.from_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">retries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.from_int"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Backwards-compatibility for the old retries format.</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">get_backoff_time</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.get_backoff_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_backoff_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.get_backoff_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Formula for computing the current backoff</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">get_retry_after</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.get_retry_after"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_retry_after</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.get_retry_after"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Get the value of Retry-After in seconds.</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">increment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_stacktrace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.increment"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">increment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_pool</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_stacktrace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.increment"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Return a new Retry object with incremented retry counters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>response</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">HTTPResponse</span></code>) – A response object, or None, if the server did not
 return a response.</p></li>
-<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.9)"><em>Exception</em></a>) – An error encountered during the request, or
+<li><p><strong>error</strong> (<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><em>Exception</em></a>) – An error encountered during the request, or
 None if the response was received successfully.</p></li>
 </ul>
 </dd>
@@ -724,13 +893,13 @@ None if the response was received successfully.</p></li>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">is_exhausted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.is_exhausted"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">is_exhausted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.is_exhausted"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Are we out of retries?</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">is_retry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_retry_after</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.is_retry"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">is_retry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_retry_after</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.is_retry"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Is this method/status code retryable? (Based on allowlists and control
 variables such as the number of total retries to allow, whether to
 respect the Retry-After header, whether this header is present, and
@@ -738,8 +907,8 @@ whether the returned status code is on the list of status codes to
 be retried upon on the presence of the aforementioned header)</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">sleep</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.sleep"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">sleep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/retry/#Retry.sleep"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Sleep between retry attempts.</p>
 <p>This method will respect a server’s <code class="docutils literal notranslate"><span class="pre">Retry-After</span></code> response header
 and sleep the duration of the time requested. If that is not present, it
@@ -748,8 +917,8 @@ this method will return immediately.</p>
 </dd></dl>
 </dd></dl>
 <dl class="py class">
-<dt>
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">urllib3.util.</span></code><code class="sig-name descname"><span class="pre">Timeout</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">total=None</span></em>, <em class="sig-param"><span class="pre">connect=&lt;object</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">read=&lt;object</span> <span class="pre">object&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">urllib3.util.</span></span><span class="sig-name descname"><span class="pre">Timeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect=&lt;object</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Timeout configuration.</p>
 <p>Timeouts can be defined as a default for a pool:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timeout</span> <span class="o">=</span> <span class="n">Timeout</span><span class="p">(</span><span class="n">connect</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">read</span><span class="o">=</span><span class="mf">7.0</span><span class="p">)</span>
@@ -769,18 +938,18 @@ this method will return immediately.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – <p>This combines the connect and read timeouts into one; the read timeout
+<li><p><strong>total</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – <p>This combines the connect and read timeouts into one; the read timeout
 will be set to the time leftover from the connect attempt. In the
 event that both a connect timeout and a total are specified, or a read
 timeout and a total are specified, the shorter timeout will be applied.</p>
 <p>Defaults to None.</p>
 </p></li>
-<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – The maximum amount of time (in seconds) to wait for a connection
+<li><p><strong>connect</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – The maximum amount of time (in seconds) to wait for a connection
 attempt to a server to succeed. Omitting the parameter will default the
 connect timeout to the system default, probably <a class="reference external" href="http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535">the global default
 timeout in socket.py</a>.
 None will set an infinite timeout for connection attempts.</p></li>
-<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – <p>The maximum amount of time (in seconds) to wait between consecutive
+<li><p><strong>read</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><em>int</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, or </em><em>None</em>) – <p>The maximum amount of time (in seconds) to wait between consecutive
 read operations for a response from the server. Omitting the parameter
 will default the read timeout to the system default, probably <a class="reference external" href="http://hg.python.org/cpython/file/603b4d593758/Lib/socket.py#l535">the
 global default timeout in socket.py</a>.
@@ -810,13 +979,13 @@ time, consider having a second “watcher” thread to cut off a slow
 request.</p>
 </div>
 <dl class="py attribute">
-<dt>
-<code class="sig-name descname"><span class="pre">DEFAULT_TIMEOUT</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&lt;object</span> <span class="pre">object&gt;</span></em></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">DEFAULT_TIMEOUT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;object</span> <span class="pre">object&gt;</span></em></dt>
 <dd><p>A sentinel object representing the default timeout value</p>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">clone</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.clone"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.clone"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Create a copy of the timeout object</p>
 <p>Timeout properties are stored per-pool but each request needs a fresh
 Timeout object to ensure each one has its own start/stop configured.</p>
@@ -829,9 +998,9 @@ Timeout object to ensure each one has its own start/stop configured.</p>
 </dd>
 </dl>
 </dd></dl>
-<dl class="py method">
-<dt>
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">connect_timeout</span></code></dt>
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect_timeout</span></span></dt>
 <dd><p>Get the value to use when setting a connection timeout.</p>
 <p>This will be a positive float or integer, the value None
 (never timeout), or the default system timeout.</p>
@@ -845,8 +1014,8 @@ Timeout object to ensure each one has its own start/stop configured.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<em class="property"><span class="pre">classmethod</span> </em><code class="sig-name descname"><span class="pre">from_float</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.from_float"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.from_float"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Create a new Timeout from a legacy timeout value.</p>
 <p>The timeout value used by httplib.py sets the same timeout on the
 connect(), and recv() socket requests. This creates a <code class="xref py py-class docutils literal notranslate"><span class="pre">Timeout</span></code>
@@ -854,7 +1023,7 @@ object that sets the individual timeouts to the <code class="docutils literal no
 passed to this function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>timeout</strong> (<em>integer</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)"><em>float</em></a><em>, </em><em>sentinel default object</em><em>, or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a>) – The legacy timeout value.</p>
+<dd class="field-odd"><p><strong>timeout</strong> (<em>integer</em><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><em>float</em></a><em>, </em><em>sentinel default object</em><em>, or </em><em>None</em>) – The legacy timeout value.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Timeout object</p>
@@ -865,15 +1034,15 @@ passed to this function.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">get_connect_duration</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.get_connect_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">get_connect_duration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.get_connect_duration"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Gets the time elapsed since the call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">start_connect()</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Elapsed time in seconds.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.9)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)">float</a></p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><p><strong>urllib3.exceptions.TimeoutStateError</strong> – if you attempt
@@ -881,9 +1050,9 @@ to get duration for a timer that hasn’t been started.</p>
 </dd>
 </dl>
 </dd></dl>
-<dl class="py method">
-<dt>
-<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">read_timeout</span></code></dt>
+<dl class="py property">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_timeout</span></span></dt>
 <dd><p>Get the value for the read timeout.</p>
 <p>This assumes some time has elapsed in the connection timeout and
 computes the read timeout appropriately.</p>
@@ -905,8 +1074,8 @@ has not yet been called on this object.</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt>
-<code class="sig-name descname"><span class="pre">start_connect</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.start_connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">start_connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/urllib3/util/timeout/#Timeout.start_connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Start the timeout clock, used during a connect() attempt</p>
 <dl class="field-list simple">
 <dt class="field-odd">Raises</dt>
@@ -920,9 +1089,10 @@ to start a timer that has been started already.</p>
 </div>
 </div>
 </div>
-</div>
+</section>
 
-      </article>
+        </article>
+      </div>
       <footer>
         
         <div class="related-pages">
@@ -947,19 +1117,33 @@ to start a timer that has been started already.</p>
               </div>
             </a>
         </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2020, Pradyun Gedam
+            </div>
 
-        <div class="related-information">
-              Copyright &#169; 2020, Pradyun Gedam
-            |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
             |
             <a class="muted-link" href="../../_sources/reference/api.md.txt"
-               rel="nofollow">
+              rel="nofollow">
               Show Source
             </a>
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/pradyunsg/furo" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+
         </div>
         
       </footer>
@@ -969,14 +1153,17 @@ to start a timer that has been started already.</p>
       
       
     </aside>
-  </main>
-</div>
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/rate-the-docs.min.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
-    <script src="../../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>
+    <script src="../../_static/scripts/algolia-search.js"></script></body>
 </html>
