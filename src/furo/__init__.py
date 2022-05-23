@@ -184,12 +184,6 @@ def _html_page_context(
             context["scripts"],
             ["scripts/furo.js"],
         )
-        # FLYTE CUSTOMIZATION: add rate-the-docs.min.js
-        # https://github.com/medmunds/rate-the-docs
-        _add_asset_hashes(
-            context["scripts"],
-            ["scripts/rate-the-docs.min.js"],
-        )
 
     # Basic constants
     context["furo_version"] = __version__
