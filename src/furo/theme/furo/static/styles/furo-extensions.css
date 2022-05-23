@@ -1,10 +1,6 @@
 /*!****************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./src/furo/assets/styles/flyte.css ***!
   \****************************************************************************************************************/
-:root {
-  --docsearch-primary-color: var(--color-brand-primary) !important;
-}
-
 h1,
 h2,
 h3,
@@ -31,6 +27,8 @@ h6 {
 .sidebar-tree ul:first-child li:not(:last-child) {
   margin-bottom: 5px;
 }
+
+/* Algolia Docs Search Style */
 
 .docsearch {
   width: 100% !important;
@@ -112,6 +110,12 @@ h6 {
   border: 1px solid #cca9ff;
   background-color: #f2e9ff;
   box-shadow: none !important;
+}
+
+body[data-theme="dark"] .sphx-glr-thumbcontainer:hover,
+body[data-theme="auto"] .sphx-glr-thumbcontainer:hover {
+  border: 1px solid #2a144a;
+  background-color: #2a144a;
 }
 
 .sphx-glr-thumbcontainer img {
@@ -322,6 +326,17 @@ div.sphinx-bs .card:hover .card-header {
   color: #fff;
 }
 
+body[data-theme="dark"] div.sphinx-bs .card:hover,
+body[data-theme="auto"] div.sphinx-bs .card:hover {
+  border-color: #2a144a;
+}
+
+body[data-theme="dark"] div.sphinx-bs .card:hover .card-header,
+body[data-theme="auto"] div.sphinx-bs .card:hover .card-header {
+  background-color: #2a144a;
+  color: #fff;
+}
+
 div.sphinx-bs .card:hover .sphinx-bs.btn {
   color: var(--color-link);
 }
@@ -425,6 +440,10 @@ article .align-default {
   color: var(--color-sidebar-link-text) !important;
 }
 
+.ratd-widget .btn {
+  color: var(--color-sidebar-link-text) !important;
+}
+
 .ratd-toggle.ratd-toggle-close {
   margin: 12px 0 !important;
 }
@@ -450,6 +469,7 @@ article .align-default {
 /* readthedocs custom styling */
 .rst-versions.rst-badge {
   bottom: 80px !important;
+  max-width: none !important;
 }
 
 .rst-versions.rst-badge.shift-up .rst-current-version .fa-book {
