@@ -439,10 +439,6 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.connect("builder-inited", _builder_inited)
     app.connect("build-finished", _overwrite_pygments_css)
 
-    # This adds the rate-the-docs widget directly to our theme
-    # https://github.com/medmunds/rate-the-docs
-    app.add_js_file("scripts/rate-the-docs.min.js", priority=200)
-
     return {
         "parallel_read_safe": True,
         "parallel_write_safe": True,

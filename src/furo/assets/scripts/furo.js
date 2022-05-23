@@ -215,12 +215,6 @@ function main() {
   // custom scrolling on toc
   setTimeout(function() {
     jQuery(".sidebar-scroll").animate({opacity: 1.0}, 100);
-
-    sidebar = document.querySelector(".sidebar-scroll");
-    target = document.querySelector(".current-page");
-    if (target) {
-      sidebar.scrollTo(0, target.offsetTop + 200);
-    }
   }, 10);
 }
 
