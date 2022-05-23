@@ -108,8 +108,7 @@ h6 {
   box-shadow: none !important;
 }
 
-body[data-theme="dark"] .sphx-glr-thumbcontainer:hover,
-body[data-theme="auto"] .sphx-glr-thumbcontainer:hover {
+body:not([data-theme="light"]) .sphx-glr-thumbcontainer:hover {
   border: 1px solid #2a144a;
   background-color: #2a144a;
 }
@@ -322,13 +321,11 @@ div.sphinx-bs .card:hover .card-header {
   color: #fff;
 }
 
-body[data-theme="dark"] div.sphinx-bs .card:hover,
-body[data-theme="auto"] div.sphinx-bs .card:hover {
+body:not([data-theme="light"]) div.sphinx-bs .card:hover {
   border-color: #2a144a;
 }
 
-body[data-theme="dark"] div.sphinx-bs .card:hover .card-header,
-body[data-theme="auto"] div.sphinx-bs .card:hover .card-header {
+body:not([data-theme="light"]) div.sphinx-bs .card:hover .card-header {
   background-color: #2a144a;
   color: #fff;
 }
