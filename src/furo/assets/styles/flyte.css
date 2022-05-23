@@ -1,3 +1,5 @@
+/* Custom styles for Flyte theme */
+
 :root {
   --docsearch-primary-color: var(--color-brand-primary) !important;
 }
@@ -79,6 +81,10 @@ h6 {
   padding-right: 15px;
   width: 1.75em;
   text-align: center;
+}
+
+.sidebar-tree .caption {
+  padding: 0;
 }
 
 .caption-text {
@@ -433,6 +439,7 @@ article .align-default {
 .ratd-widget .ratd-panel-suggestion .btn {
   background-color: var(--color-link);
   border-color: var(--color-link);
+  color: var(--color-content-foreground) !important;
 }
 
 .ratd-widget i {
@@ -442,6 +449,7 @@ article .align-default {
 /* readthedocs custom styling */
 .rst-versions.rst-badge {
   bottom: 80px !important;
+  max-width: none !important;
 }
 
 .rst-versions.rst-badge.shift-up .rst-current-version .fa-book {

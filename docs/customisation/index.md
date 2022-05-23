@@ -8,10 +8,14 @@ This section serves to guide the user with customising Furo-based documentation.
 :hidden:
 
 logo
+announcement
+edit-button
 colors
 fonts
+footer
 landing-page
 sidebar
+sidebar-title
 toc
 injecting
 ```
@@ -28,7 +32,7 @@ Note that only the configuration options listed here are supported (not the ones
 
 ### `light_css_variables`/`dark_css_variables`
 
-Furo makes extensive use of [CSS variables][css-variables]. These can be overridden by the user and are used for stylizing nearly all elements of the documentation.
+Furo makes extensive use of [CSS variables][css-variables]. These can be overridden by the user and are used for stylizing nearly all elements of the documentation. {doc}`colors` contains important details of how these variables are used.
 
 Setting `*_css_variables` is the recommended mechanism to override Furo's default values for these variables.
 
@@ -66,15 +70,24 @@ html_theme_options = {
 }
 ```
 
-### `announcement`
+(top_of_page_button)=
+### `top_of_page_button`
 
-Adds a site-wide announcement, to the top of every page when set. This can contain HTML and is included as-is into the page.
+Controls which button is shown on the top of the page. The only supported values are `"edit"` (the default) and `None`.
 
 ```python
 html_theme_options = {
-    "announcement": "<em>Important</em> announcement!",
+    "top_of_page_button": "edit",
 }
 ```
+
+### `announcement`
+
+Add a site-wide announcement, to the top of every page when set. See {doc}`./announcement` for the details.
+
+### `footer_icons`
+
+Changes the icons presented in the site footer. See {doc}`./footer` for the details.
 
 ## Page specific tweaks
 

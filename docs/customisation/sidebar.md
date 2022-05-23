@@ -2,14 +2,17 @@
 
 Furo supports customising the elements that show up in the navigational sidebar (left). This is to provide documentation authors who are willing to work with HTML/CSS to change and tweak how the sidebar looks.
 
-```{warning}
+```{admonition} Unstable
+:class: caution
+
+This customisation considered "unstable" under Furo's {doc}`../stability`.
+
 Furo is not designed to accommodate for all potential custom sidebar designs. It is also possible to get suboptimal results (or even break the layout!) when overriding the default sidebar.
 ```
 
-```{admonition} Info
-:class: tip
+## Expectations
 
-The general expectation is that users who override the sidebar would also carefully consider how their documentation looks across various platforms (i.e. not take a "looks OK on my machine" approach) and would be willing to override Furo's styles to make it work with their sidebar design.
+It is expected that users who override the sidebar would also carefully consider how their documentation looks across various platforms (i.e. not take a "looks OK on my machine" approach) and would be willing to override Furo's styles to make it work with their sidebar design.
 
 Some things to consider when doing this are:
 
@@ -17,7 +20,7 @@ Some things to consider when doing this are:
   with different effects on the layouting
 - end users can customise the look of their default scrollbars at an OS level(like overlay, hidden, visible-and-takes-space and maybe more?)
 - different viewport heights will differ across devices
-```
+- "user interaction flows", such as looking for a certain page in the sidebar or via search.
 
 ## Default design
 
@@ -61,14 +64,16 @@ This is useful when you want to make drastic or major changes to the design of F
 As an example, to make the _entire_ sidebar scrollable, it is possible to set `sidebar/scroll-start.html` as the first fragment and `sidebar/scroll-end.html` as the last fragment.
 
 ```py
-html_sidebars = [
-    "sidebar/scroll-start.html",
-    "sidebar/brand.html",
-    "sidebar/search.html",
-    "sidebar/navigation.html",
-    "sidebar/ethical-ads.html",
-    "sidebar/scroll-end.html",
-]
+html_sidebars = {
+    "**": [
+        "sidebar/scroll-start.html",
+        "sidebar/brand.html",
+        "sidebar/search.html",
+        "sidebar/navigation.html",
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
+    ]
+}
 ```
 
 ```{warning}
@@ -76,7 +81,7 @@ html_sidebars = [
 ```
 
 ```{tip}
-If you're hosting your documentation on ReadTheDocs, please make sure that `sidebar/ethical-ads.html` is included in the sidebar. This helps keep ReadTheDocs sustainable.
+If you're hosting your documentation on Read the Docs, please make sure that `sidebar/ethical-ads.html` is included in the sidebar. This helps keep Read the Docs sustainable.
 ```
 
 [sphinx-templates_path]: https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-templates_path

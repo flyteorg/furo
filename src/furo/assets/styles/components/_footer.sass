@@ -9,16 +9,48 @@ footer
   margin-top: 2rem
 
 // Bottom of page information
-.related-information
-  margin-top: 1rem
+.bottom-of-page
+  display: flex
+  align-items: center
+  justify-content: space-between
 
-  padding: 0.75rem
+  margin-top: 1rem
+  padding-top: 1rem
   padding-bottom: 1rem
 
+  color: var(--color-foreground-secondary)
   border-top: 1px solid var(--color-background-border)
 
   line-height: 1.5
-  color: var(--color-foreground-secondary)
+
+  @media (max-width: $content-width)
+    text-align: center
+    flex-direction: column-reverse
+    gap: 0.25rem
+
+  .left-details
+    font-size: var(--font-size--small)
+
+  .right-details
+    display: flex
+    flex-direction: column
+    gap: 0.25rem
+    text-align: right
+
+  .icons
+    display: flex
+    justify-content: flex-end
+    gap: 0.25rem
+    font-size: 1rem
+
+    a
+      text-decoration: none
+
+    svg,
+    img
+      font-size: 1.125rem
+      height: 1em
+      width: 1em
 
 // Next/Prev page information
 .related-pages
@@ -61,6 +93,7 @@ footer
 .page-info
   display: flex
   flex-direction: column
+  overflow-wrap: anywhere
 
   .next-page &
     align-items: flex-end

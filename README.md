@@ -61,12 +61,14 @@ Furo is inspired by (and borrows elements from) some excellent technical documen
 - [mkdocs-material] for MkDocs
 - [Just the Docs] for Jekyll
 - [GitBook]
+- [pdoc3]
 
 We use [BrowserStack] to test on real devices and browsers. Shoutout to them for supporting OSS projects!
 
 [mkdocs-material]: https://squidfunk.github.io/mkdocs-material/
 [just the docs]: https://pmarsceill.github.io/just-the-docs/
 [gitbook]: https://www.gitbook.com/
+[pdoc3]: https://pdoc3.github.io/pdoc/doc
 [browserstack]: https://browserstack.com/
 
 ## What's with the name?
@@ -83,19 +85,19 @@ A ferret is actually a really good spirit animal for this project: cute, small, 
 
 > I'm being told that mentioning who uses `$thing` is a good way to promote `$thing`.
 
-- [urllib3] -- THE first adopter of Furo.
-- [attrs] (also one of the early adopters!)
-- [psycopg3]
-- [pip]
-- [packaging]
-
-I'm also a maintainer on the last two, so... that covers responsible disclosure. :)
+- [urllib3] -- THE first adopter of Furo
+- [attrs] -- one of the early adopters!
+- [pip] -- what I wrote this for
+- [Python Developer’s Guide][devguide]
+- [psycopg3] -- another of the early adopters!
+- [black]
 
 [urllib3]: https://urllib3.readthedocs.io/
 [attrs]: https://www.attrs.org/
-[psycopg3]: https://www.psycopg.org/psycopg3/docs/
+[devguide]: https://devguide.python.org/
 [pip]: https://pip.pypa.io/
-[packaging]: https://packaging.pypa.io/
+[psycopg3]: https://www.psycopg.org/psycopg3/docs/
+[black]: https://black.readthedocs.io/en/stable/
 
 <!-- end used-by -->
 
@@ -153,10 +155,7 @@ pip install git+https://github.com/flyteorg/furo@main
 
 Therefore, we need to check in all the compiled code that's typically not
 checked into git. So if you make changes to any of the `css` or `js` files in
-the `src` directory, you need to compile the project and check it in:
+the `src` directory, you need to compile the project and check it in.
 
-```
-./node_modules/.bin/gulp build
-```
-
-Then add the changes and commit it as usual.
+The `nox -s docs-live` command above should generate all the files needed, so after
+a successful build you can add the changes and commit it as usual.
