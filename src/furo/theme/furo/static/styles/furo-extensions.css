@@ -324,13 +324,24 @@ div.sphinx-bs .card:hover .card-header {
   color: #fff;
 }
 
-body:not([data-theme="light"]) div.sphinx-bs .card:hover {
+body[data-theme="dark"] div.sphinx-bs .card:hover {
   border-color: #2a144a;
 }
 
-body:not([data-theme="light"]) div.sphinx-bs .card:hover .card-header {
+body[data-theme="dark"] div.sphinx-bs .card:hover .card-header {
   background-color: #2a144a;
   color: #fff;
+}
+
+/* make sure hover style is consistent if user prefers dark theme at OS level */
+@media (prefers-color-scheme: dark) {
+  body:not([data-theme="light"]) div.sphinx-bs .card:hover {
+    border-color: #2a144a;
+  }
+  body:not([data-theme="light"]) div.sphinx-bs .card:hover .card-header {
+    background-color: #2a144a;
+    color: #fff;
+  }
 }
 
 div.sphinx-bs .card:hover .sphinx-bs.btn {
