@@ -264,7 +264,7 @@ p.sphx-glr-script-out {
     color: #9ca0a5 !important;
   }
   details.sphinx-bs.dropdown {
-    background: var(--color-background-secondary);
+    background: var(--color-background-primary);
     border: 1px solid var(--color-background-border);
   }
   details.sphinx-bs.dropdown .card-header {
@@ -388,14 +388,14 @@ div.sphinx-bs .card {
 
 /* sphinx tabs */
 .sphinx-tabs-tab[aria-selected="true"] {
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-background-primary);
   border: 1px solid var(--color-background-border);
-  border-bottom: 1px solid var(--color-background-secondary);
+  border-bottom: 1px solid var(--color-background-primary);
 }
 
 .sphinx-tabs-panel {
   border: 1px solid var(--color-background-border);
-  background: var(--color-background-secondary);
+  background: var(--color-background-primary);
   border-top: 0;
 }
 
