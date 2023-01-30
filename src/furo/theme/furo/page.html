@@ -95,60 +95,6 @@
       </div>
       <footer>
         {% block footer %}
-        <!--
-          Customize next and previous base on page metadata. If next_page and
-          next_page_title are defined in the file metadata, override the default
-          next page link. Similarly, if prev_page and prev_page_title are
-          defined in the file metadata, override the default previous page link.
-          See here for more info on file-wide metadata:
-          https://www.sphinx-doc.org/en/master/usage/restructuredtext/field-lists.html#metadata
-        -->
-        <!-- <div class="related-pages">
-          {% if next -%}
-            {% if 'next-page' in meta -%}
-            <a class="next-page" href="{{ pathto(meta['next-page']) }}">
-            {% else %}
-            <a class="next-page" href="{{ next.link }}">
-            {%- endif %}
-              <div class="page-info">
-                <div class="context">
-                  <span>{{ _("Next") }}</span>
-                </div>
-                {% if 'next-page' in meta and 'next-page-title' not in meta -%}
-                <div class="title">{{ meta['next-page'] | replace("_", " ") | capitalize }}</div>
-                {% elif 'next-page' in meta and 'next-page-title' in meta -%}
-                <div class="title">{{ meta['next-page-title'] }}</div>
-                {% else %}
-                <div class="title">{{ next.title }}</div>
-                {%- endif %}
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          {%- endif %}
-
-          {% if prev -%}
-            {% if 'prev-page' in meta -%}
-            <a class="prev-page" href="{{ pathto(meta['prev-page']) }}">
-            {% else %}
-            <a class="prev-page" href="{{ prev.link }}">
-            {%- endif %}
-              <svg><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>{{ _("Previous") }}</span>
-                </div>
-                {% if 'prev-page' in meta and 'prev-page-title' not in meta -%}
-                <div class="title">{{ meta['prev-page'] | replace("_", " ") | capitalize }}</div>
-                {% elif 'prev-page' in meta and 'prev-page-title' in meta -%}
-                <div class="title">{{ meta['prev-page-title'] }}</div>
-                {% elif prev.link == pathto(master_doc) %}
-                <div class="title">{{ _("Home") }}</div>
-                {% else %}
-                <div class="title">{{ prev.title }}</div>
-                {% endif %}
-              </div>
-            </a>
-          {%- endif %} -->
           {% if next -%}
           <a class="next-page" href="{{ next.link }}">
             <div class="page-info">
