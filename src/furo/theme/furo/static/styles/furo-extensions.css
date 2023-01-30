@@ -95,10 +95,6 @@ h6 {
   content: none;
 }
 
-.sphx-glr-thumbnails {
-  display: block;
-}
-
 .sphx-glr-thumbcontainer {
   background-color: var(--color-background-secondary);
   border: 1px solid var(--color-background-border);
@@ -107,8 +103,7 @@ h6 {
   min-height: 60px;
   width: 100%;
   padding-top: 0px;
-  margin: 10px 0;
-  display: block;
+  margin: 10px;
 }
 
 .sphx-glr-thumbcontainer:hover {
@@ -123,18 +118,10 @@ body:not([data-theme="light"]) .sphx-glr-thumbcontainer:hover {
 }
 
 .sphx-glr-thumbcontainer img {
-  float: left;
   width: 30px;
   margin-top: 14px;
   margin-left: 14px;
   opacity: 0.5;
-}
-
-.sphx-glr-thumbnail-title {
-  margin-top: 18px;
-  margin-left: 65px;
-  color: #696969;
-  font-size: 15px;
 }
 
 div.sphx-glr-download-link-note,
@@ -484,7 +471,7 @@ article .align-default {
 }
 
 .ratd-widget i {
-  color: var(--color-foreground-muted) !important;
+  color: var(--color-content-foreground) !important;
 }
 
 /* readthedocs custom styling */
