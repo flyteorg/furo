@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=8c3b7aed7cecc1e615270a13e67bf763781b3d97" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=0017e95e5e64a0b30fe948762a03d0a2dfa5450c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pied-piper-admonition.css" />
     
     
@@ -145,12 +145,12 @@
     <div class="nav-toggler"><i class="fas fa-chevron-down"></i></div>
     <div class="main-sections nav-collapsed">
       <div>
-        <a href="https://docs.flyte.org/en/latest/getting_started/index.html">
+        <a href="https://docs.flyte.org/projects/cookbook/en/latest/index.html">
           <div class="brand">Getting Started</div>
         </a>
       </div>
       <div>
-        <a href="https://docs.flyte.org/projects/cookbook/en/latest/index.html">
+        <a href="https://docs.flyte.org/projects/cookbook/en/latest/userguide.html">
           <div class="brand">User Guide</div>
         </a>
       </div>
@@ -346,7 +346,7 @@
     <span class="n">file</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TextIO</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">line</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">"""Show a warning to the end user.</span>
+<span class="w">    </span><span class="sd">"""Show a warning to the end user.</span>
 
 <span class="sd">    .. code:: python</span>
 
@@ -362,34 +362,43 @@
 
 
 <div class="viewcode-block" id="RandomNumberGenerator"><a class="viewcode-back" href="../../../kitchen-sink/api/#furo._demo_module.RandomNumberGenerator">[docs]</a><span class="k">class</span> <span class="nc">RandomNumberGenerator</span><span class="p">:</span>
-    <span class="sd">"""A random number generator."""</span>
+<span class="w">    </span><span class="sd">"""A random number generator."""</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="sd">"""Initialize."""</span>
+<span class="w">        </span><span class="sd">"""Initialize."""</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_seed</span> <span class="o">=</span> <span class="mi">4</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">seed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="sd">"""Get seed for random number generation.</span>
+<span class="w">        </span><span class="sd">"""Get seed for random number generation.</span>
 
 <span class="sd">        .. seealso:: https://xkcd.com/221/</span>
 <span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_seed</span>
 
 <div class="viewcode-block" id="RandomNumberGenerator.get_random_integer"><a class="viewcode-back" href="../../../kitchen-sink/api/#furo._demo_module.RandomNumberGenerator.get_random_integer">[docs]</a>    <span class="k">def</span> <span class="nf">get_random_integer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-        <span class="sd">"""Return a random integer."""</span>
+<span class="w">        </span><span class="sd">"""Return a random integer."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">seed</span></div>
 
 <div class="viewcode-block" id="RandomNumberGenerator.get_random_float"><a class="viewcode-back" href="../../../kitchen-sink/api/#furo._demo_module.RandomNumberGenerator.get_random_float">[docs]</a>    <span class="k">def</span> <span class="nf">get_random_float</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
-        <span class="sd">"""Return a random float."""</span>
+<span class="w">        </span><span class="sd">"""Return a random float."""</span>
         <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="p">)</span></div></div>
 </pre></div>
         </article>
       </div>
       <footer>
         
+        <!--
+          Customize next and previous base on page metadata. If next_page and
+          next_page_title are defined in the file metadata, override the default
+          next page link. Similarly, if prev_page and prev_page_title are
+          defined in the file metadata, override the default previous page link.
+          See here for more info on file-wide metadata:
+          https://www.sphinx-doc.org/en/master/usage/restructuredtext/field-lists.html#metadata
+        -->
         <div class="related-pages">
           
+
           
         </div>
         <div class="bottom-of-page">

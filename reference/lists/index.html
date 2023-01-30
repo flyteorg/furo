@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=8c3b7aed7cecc1e615270a13e67bf763781b3d97" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0017e95e5e64a0b30fe948762a03d0a2dfa5450c" />
     <link rel="stylesheet" type="text/css" href="../../_static/pied-piper-admonition.css" />
     
     
@@ -146,12 +146,12 @@
     <div class="nav-toggler"><i class="fas fa-chevron-down"></i></div>
     <div class="main-sections nav-collapsed">
       <div>
-        <a href="https://docs.flyte.org/en/latest/getting_started/index.html">
+        <a href="https://docs.flyte.org/projects/cookbook/en/latest/index.html">
           <div class="brand">Getting Started</div>
         </a>
       </div>
       <div>
-        <a href="https://docs.flyte.org/projects/cookbook/en/latest/index.html">
+        <a href="https://docs.flyte.org/projects/cookbook/en/latest/userguide.html">
           <div class="brand">User Guide</div>
         </a>
       </div>
@@ -375,12 +375,12 @@ paragraphs to the correct level.</p>
 </ul>
 </div>
 <input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--2">Markdown (MyST)</label><div class="tab-content docutils">
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">-</span> Bullet lists in Markdown are pretty straightforward.
-<span class="k">-</span> A bunch of bullet points.
-  <span class="k">-</span> Nested bullets should be indented by two or more spaces.
-  <span class="k">-</span> They can just "show up" inline with the rest of the list. Adding blank lines
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="k">-</span><span class="w"> </span>Bullet lists in Markdown are pretty straightforward.
+<span class="k">-</span><span class="w"> </span>A bunch of bullet points.
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>Nested bullets should be indented by two or more spaces.
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>They can just "show up" inline with the rest of the list. Adding blank lines
     before and after is also permitted.
-<span class="k">-</span> It is also possible to have multiple paragraphs in a bullet.
+<span class="k">-</span><span class="w"> </span>It is also possible to have multiple paragraphs in a bullet.
 
   Make sure to have a blank line between the paragraphs, and to indent the
   paragraphs to the correct level.
@@ -474,17 +474,29 @@ Complicated Term
       </div>
       <footer>
         
+        <!--
+          Customize next and previous base on page metadata. If next_page and
+          next_page_title are defined in the file metadata, override the default
+          next page link. Similarly, if prev_page and prev_page_title are
+          defined in the file metadata, override the default previous page link.
+          See here for more info on file-wide metadata:
+          https://www.sphinx-doc.org/en/master/usage/restructuredtext/field-lists.html#metadata
+        -->
         <div class="related-pages">
-          <a class="next-page" href="../tables/">
+          
+            <a class="next-page" href="../tables/">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
+                
                 <div class="title">Tables</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../images/">
+
+          
+            <a class="prev-page" href="../images/">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">

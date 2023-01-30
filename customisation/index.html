@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=8c3b7aed7cecc1e615270a13e67bf763781b3d97" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=0017e95e5e64a0b30fe948762a03d0a2dfa5450c" />
     <link rel="stylesheet" type="text/css" href="../_static/pied-piper-admonition.css" />
     
     
@@ -146,12 +146,12 @@
     <div class="nav-toggler"><i class="fas fa-chevron-down"></i></div>
     <div class="main-sections nav-collapsed">
       <div>
-        <a href="https://docs.flyte.org/en/latest/getting_started/index.html">
+        <a href="https://docs.flyte.org/projects/cookbook/en/latest/index.html">
           <div class="brand">Getting Started</div>
         </a>
       </div>
       <div>
-        <a href="https://docs.flyte.org/projects/cookbook/en/latest/index.html">
+        <a href="https://docs.flyte.org/projects/cookbook/en/latest/userguide.html">
           <div class="brand">User Guide</div>
         </a>
       </div>
@@ -423,17 +423,29 @@
       </div>
       <footer>
         
+        <!--
+          Customize next and previous base on page metadata. If next_page and
+          next_page_title are defined in the file metadata, override the default
+          next page link. Similarly, if prev_page and prev_page_title are
+          defined in the file metadata, override the default previous page link.
+          See here for more info on file-wide metadata:
+          https://www.sphinx-doc.org/en/master/usage/restructuredtext/field-lists.html#metadata
+        -->
         <div class="related-pages">
-          <a class="next-page" href="logo/">
+          
+            <a class="next-page" href="logo/">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
+                
                 <div class="title">Adding a logo</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../quickstart/">
+
+          
+            <a class="prev-page" href="../quickstart/">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
